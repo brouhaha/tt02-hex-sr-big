@@ -9,8 +9,9 @@ that can be driven / tested by the cocotb test.py
 module tb (
     // testbench is controlled by test.py
     input clk,
-    input rst,
-    output [6:0] segments
+    input recirc,
+    input [5:0] sr_in,
+    output [5:0] sr_out
    );
 
     // this part dumps the trace to a vcd file that can be viewed with GTKWave
@@ -21,12 +22,12 @@ module tb (
     end
 
     // wire up the inputs and outputs
-    wire [7:0] inputs = {6'b0, rst, clk};
+    wire [7:0] inputs = {sr_in, recirc, clk};
     wire [7:0] outputs;
-    assign segments = outputs[6:0];
+    assign sr_out = outputs[7:2];
 
     // instantiate the DUT
-    seven_segment_seconds #(.MAX_COUNT(100)) seven_segment_seconds(
+    hex_sr #(.LENGTH(40)) hex_sr(
         .io_in  (inputs),
         .io_out (outputs)
         );

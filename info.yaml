@@ -3,9 +3,9 @@
 project:
   wokwi_id:    0        # If using wokwi, set this to your project's ID
   source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
-    - counter.v
-    - decoder.v
-  top_module:  "seven_segment_seconds"      # put the name of your top module here, make it unique by prepending your github username
+    - hex_sr.v
+    - sr_recirc.v
+  top_module:  "hex_sr"      # put the name of your top module here, make it unique by prepending your github username
 
 # As everyone will have access to all designs, try to make it easy for someone new to your design to know what
 # it does and how to operate it.
@@ -14,12 +14,12 @@ project:
 #
 # This info will be automatically collected and used to make a datasheet for the chip.
 documentation: 
-  author:       "Matt Venn"      # Your name
+  author:       "Eric Smith"      # Your name
   discord:      "mattvenn"      # Your discord handle
-  title:        "7 segment seconds"      # Project title
-  description:  "count up to 10, one second at a time"      # Short description of what your project does
-  how_it_works: "uses a register and some combinational logic"      # Longer description of how the project works
-  how_to_test:  "after reset, the counter should increase by one every second"      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  title:        "hex shift register"      # Project title
+  description:  "six 40-bit shift registers"      # Short description of what your project does
+  how_it_works: "Six 40-bit shift registers. A multiplexer selects input data or recirulating output data."      # Longer description of how the project works
+  how_to_test:  "on each clock n, six bits are shifted in, and the six bits that were input at clock n-4 are output"      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
   external_hw:  ""      # Describe any external hardware needed
   language:     "verilog" # other examples include Verilog, Amaranth, VHDL, etc
   doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
@@ -27,20 +27,20 @@ documentation:
   picture:      ""      # relative path to a picture in your repository
   inputs:               # a description of what the inputs do
     - clock
-    - reset
-    - none
-    - none
-    - none
-    - none
-    - none
-    - none
+    - recirculate
+    - data in a
+    - data in b
+    - data in c
+    - data in d
+    - data in e
+    - data in f
   outputs:
-    - segment a         # a description of what the outputs do
-    - segment b
-    - segment c
-    - segment d
-    - segment e
-    - segment f
-    - segment g
+    - none         # a description of what the outputs do
     - none
+    - data out a
+    - data out b
+    - data out c
+    - data out d
+    - data out e
+    - data out f
 
