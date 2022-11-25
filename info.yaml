@@ -16,9 +16,9 @@ project:
 documentation: 
   author:       "Eric Smith"      # Your name
   discord:      "brouhaha"      # Your discord handle
-  title:        "hex shift register"      # Project title
-  description:  "six 40-bit shift registers"      # Short description of what your project does
-  how_it_works: "Six 40-bit shift registers. A multiplexer selects input data or recirulating output data."      # Longer description of how the project works
+  title:        "hex shift register - big"      # Project title
+  description:  "six big shift registers"      # Short description of what your project does
+  how_it_works: "Six big shift registers. A multiplexer selects input data or recirulating output data."      # Longer description of how the project works
   how_to_test:  "on each clock n, six bits are shifted in, and the six bits that were input at clock n-4 are output"      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
   external_hw:  ""      # Describe any external hardware needed
   language:     "verilog" # other examples include Verilog, Amaranth, VHDL, etc

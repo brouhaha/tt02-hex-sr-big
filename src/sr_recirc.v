@@ -4,7 +4,7 @@
 
 `default_nettype none
 
-module sr_recirc #( parameter LENGTH = 40 ) (
+module sr_recirc #( parameter LENGTH ) (
 	   input clk,
 	   input recirc,  // 0 to shift in data_in, 1 to recirculate
 	   input data_in,
