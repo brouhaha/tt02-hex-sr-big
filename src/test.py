@@ -10,7 +10,7 @@ async def test_hex_sr(dut):
     cocotb.start_soon(clock.start())
 
     cycles = 512
-    sr_len = 200
+    sr_len = 100
 
     dut.recirc.value = 0
     for cycle in range(cycles):
