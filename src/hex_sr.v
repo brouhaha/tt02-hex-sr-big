@@ -4,7 +4,7 @@
 
 `default_nettype none
 
-module hex_sr #( parameter LENGTH = 400 ) (
+module hex_sr #( parameter LENGTH = 200 ) (
   input [7:0] io_in,
   output [7:0] io_out
 );
